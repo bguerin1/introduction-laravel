@@ -5,8 +5,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Todo extends Model
+class contact extends Model
 {
     use HasFactory;
-    protected $fillable = ['texte','termine'];
+    protected $fillable = ['email','titre','raison','date'];
 }
