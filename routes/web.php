@@ -6,7 +6,7 @@ use App\Http\Controllers\TodoControleur;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\PingPongControleur;
 use App\Http\Controllers\TestFlashController;
-
+use App\Http\Middleware\CheckContact;
 
 Route::get('/', function () {
     return view('welcome', ['titre' => 'Mon premier exemple.']);
@@ -23,5 +23,6 @@ Route::post('/todo', [TodoControleur::class, 'addTodo'])->middleware(CheckTodo::
 Route::get('/termine/{id}', [TodoControleur::class, 'changeTodo']);
 Route::get('/supp/{id}', [TodoControleur::class, 'suppTodo']);
 
-Route::get('/contact', [ContactController::class, 'main']);
+Route::get('/contact', [ContactController::class, 'listContact']);
+Route::post('/contact', [ContactController::class, 'addContact'])->middleware(CheckContact::class);
 
