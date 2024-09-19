@@ -3,7 +3,7 @@
 @section('title', 'Bienvenue')
 
 @section('content') 
-   
+
 <table>
     @foreach($todos as $todo)
     <tr>
@@ -12,12 +12,15 @@
     @endforeach
 </table>
 
+
 <form method="POST" action="/todo">
     @csrf 
     <!-- La suite de votre formulaire -->
    <input type="text" name="texte">
    <button type="submit">Ajouter</button>
 </form>
+
+<a href="/logout">Déconnexion</a>
 
 @if(session('error'))
     <div style="color: red;">{{ session('error') }}</div>

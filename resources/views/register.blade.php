@@ -4,23 +4,22 @@
 
 @section('content')
 
-<h1>Formulaire de connexion</h1>
-<form action="/traitementLogin" method="POST">
+<h1>Formulaire d'inscription</h1>
+<form action="/traitementRegister" method="POST">
     @csrf
+    <input type="text" id="name" name="name" placeholder="Nom"/>
+    <br>
+    <br>
     <input type="mail" id="login" name="email" placeholder="Email"/>
     <br>
     <br>
     <input type="password" id="password" name="password" placeholder="Password"/>
     <br>
     <br>
-    <input type="submit" value="Connexion"/>
+    <input type="submit" value="Inscription"/>
 </form>
 
 <br>
-
-<a href="/register">Inscription</a>
-
-<br><br>
 
 @if ($errors->any())
     <div class="alert alert-danger">
