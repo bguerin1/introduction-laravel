@@ -17,16 +17,16 @@ class AuthentificationControleur extends Controller
         $request->validate(
             [
                 'email' => 'required|email|max:255',
+                'password' => 'required',
             ],
             [
                 'required' => 'Le champ :attribute est obligatoire.',
-                'string' => 'Le champ :attribute doit être une chaîne de caractères.',
                 'max' => 'Le champ :attribute ne peut pas dépasser :max caractères.',
                 'email' => 'Le champ :attribute doit être une adresse email valide.',
-                'min' => 'Le champ :attribute doit contenir au moins :min caractères.',
             ],
             [
                 'email' => 'email',
+                'password' => 'mot de passe',
             ]
         );
 
@@ -54,6 +54,7 @@ class AuthentificationControleur extends Controller
     {   
         $request->validate(
             [
+                'name' => 'required|string|max:255',
                 'email' => 'required|email|max:255',
                 'password' => 'required|string|min:8',
             ],
@@ -65,6 +66,7 @@ class AuthentificationControleur extends Controller
                 'min' => 'Le champ :attribute doit contenir au moins :min caractères.',
             ],
             [
+                'name' => 'nom',
                 'email' => 'email',
                 'password' => 'mot de passe',
             ]

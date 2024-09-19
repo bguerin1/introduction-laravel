@@ -13,16 +13,18 @@
       rel="stylesheet"
       type="text/css"
     />
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+
     <!-- Styles -->
     <style>
       html,
       body {
         color: #636b6f;
         font-family: "Raleway", sans-serif;
-        font-weight: 100;
+        font-weight: 400;
         height: 100vh;
         margin: 0;
-        background: linear-gradient(#e66465, #9198e5);
       }
       .full-height {
         height: 100vh;

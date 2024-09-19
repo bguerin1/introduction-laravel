@@ -13,12 +13,12 @@
     <input type="password" id="password" name="password" placeholder="Password"/>
     <br>
     <br>
-    <input type="submit" value="Connexion"/>
+    <button type="submit" class="btn btn-primary">Connexion</button>
 </form>
 
 <br>
 
-<a href="/register">Inscription</a>
+<p>Vous n'avez pas de compte ? <a href="/register">Inscription</a></p>
 
 <br><br>
 

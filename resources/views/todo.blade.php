@@ -4,6 +4,19 @@
 
 @section('content') 
 
+
+
+<h1>Ajout d'une TodoList</h1>
+
+<form method="POST" action="/todo">
+    @csrf 
+    <!-- La suite de votre formulaire -->
+   <input type="text" name="texte">
+   <button type="submit">Ajouter</button>
+</form>
+
+<br>
+
 <table>
     @foreach($todos as $todo)
     <tr>
@@ -12,13 +25,7 @@
     @endforeach
 </table>
 
-
-<form method="POST" action="/todo">
-    @csrf 
-    <!-- La suite de votre formulaire -->
-   <input type="text" name="texte">
-   <button type="submit">Ajouter</button>
-</form>
+<br>
 
 <a href="/logout">Déconnexion</a>
 

@@ -5,6 +5,7 @@
 @section('content')
 
 <h1>Formulaire d'inscription</h1>
+
 <form action="/traitementRegister" method="POST">
     @csrf
     <input type="text" id="name" name="name" placeholder="Nom"/>
@@ -16,10 +17,18 @@
     <input type="password" id="password" name="password" placeholder="Password"/>
     <br>
     <br>
-    <input type="submit" value="Inscription"/>
+    <button type="submit" class="btn btn-primary">Inscription</button>
 </form>
 
 <br>
+
+<p>Vous avez déjà un compte ? <a href="/login">Se connecter</a></p>
+
+<br>
+
+<br>
+
+
 
 @if ($errors->any())
     <div class="alert alert-danger">

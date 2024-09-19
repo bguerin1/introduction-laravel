@@ -20,12 +20,12 @@ Route::get('/flash', [TestFlashController::class, 'main']);
 Route::post('/traitement', [TestFlashController::class, 'traitement']);
 
 Route::middleware('throttle:50,1')->get('/todo', [TodoControleur::class, 'listTodo'])->middleware(CheckAuth::class);
-Route::middleware('throttle:10,1')->post('/todo', [TodoControleur::class, 'addTodo'])->middleware(CheckTodo::class);
+Route::middleware('throttle:10,1')->post('/todo', [TodoControleur::class, 'addTodo'])->middleware(CheckTodo::class)->middleware(CheckAuth::class);
 
 Route::get('/termine/{id}', [TodoControleur::class, 'changeTodo']);
 Route::get('/supp/{id}', [TodoControleur::class, 'suppTodo']);
 
-Route::get('/contact', [ContactController::class, 'listContact'])->middleware(CheckAuth::class);
+Route::get('/contact', [ContactController::class, 'listContact']);
 Route::post('/contact', [ContactController::class, 'addContact'])->middleware(CheckContact::class);
 
 Route::get('/login', [AuthentificationControleur::class, 'login']);
